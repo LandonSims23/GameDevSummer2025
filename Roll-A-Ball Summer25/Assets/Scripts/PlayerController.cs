@@ -6,12 +6,14 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
 
     private Rigidbody rb;
+    private int count;
     private float movementX;
     private float movementy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        count = 0;
     }
 
     void OnMove(InputValue movementValue)
@@ -27,7 +29,16 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementy);
         rb.AddForce(movement * speed);
     }
-    
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;    
+        }
+       
+    }
+    
   
 }
