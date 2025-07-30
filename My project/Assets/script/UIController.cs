@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class door : MonoBehaviour
+public class UIController : MonoBehaviour
 {
     public static string actionText;
     public static string commandText;
