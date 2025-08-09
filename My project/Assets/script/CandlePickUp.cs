@@ -19,7 +19,7 @@ public class CandlePickUp : MonoBehaviour
             {
                 this.GetComponent<BoxCollider>().enabled = false;
                 tableCandle.SetActive(false);
-                handCandle.SetActive(false);
+                handCandle.SetActive(true);
             }
         }
     }
